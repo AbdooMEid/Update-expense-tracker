@@ -1,11 +1,14 @@
 const app = require("express").Router();
 const transactionModel = require("../model/Transactio");
 
+/*
+/api/v1/deleteTransaction
+method => post
+*/
 
 
 
-
- app.delete('/deleteTransaction' ,async (req,res)=>{
+ app.post('/deleteTransaction' ,async (req,res)=>{
     try {
         const transaction = await transactionModel.findByIdAndDelete({_id : req.body.delete})
  
