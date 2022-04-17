@@ -2,6 +2,11 @@ const app = require('express').Router()
 const transactionModel = require('../model/Transactio')
 const auth = require('../auth/auth')
 
+/*
+/api/v1//addTransaction
+method => post
+
+*/
 
 
 app.post('/addTransaction' , auth ,async (req,res,next)=>{
