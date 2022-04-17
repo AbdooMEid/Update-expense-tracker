@@ -22,7 +22,7 @@ app.post('/login' , async (req,res)=>{
             res.status(201).json({message : 'User Not Found'})
         }
     } catch (error) {
-        res.status(401).json({message :"please Add Email And Password" })
+        res.status(201).json({message :"please Add Email And Password" })
     }
 })
 
