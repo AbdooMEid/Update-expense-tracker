@@ -3,6 +3,10 @@ const bcrypt = require("bcryptjs");
 const userModel = require("../model/userModel");
 const { check, validationResult } = require("express-validator");
 
+/*
+api/v1/register
+method => post
+*/
 app.post(
   "/register",
   check("name").isAlpha("en-US"),
