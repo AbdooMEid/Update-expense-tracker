@@ -12,7 +12,7 @@ app.get("/getAllTransaction", auth, async (req, res) => {
 
     }
   } catch (error) {
-    res.status(400).json({ error });
+    res.status(201).json({ error });
   }
 });
 
