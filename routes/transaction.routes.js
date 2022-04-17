@@ -9,7 +9,7 @@ app.post('/addTransaction' , auth ,async (req,res,next)=>{
      const {text , amount} = req.body;
         if(req.header('token')){
             const transaction = await transactionModel.insertMany({text , amount , userID : req.id})
-            return res.status(201).json({transaction})
+            return res.status(200).json({transaction})
         }else{
             res.status(201).json({message  :'Not Valid Token'})
         }
@@ -18,12 +18,12 @@ app.post('/addTransaction' , auth ,async (req,res,next)=>{
     } catch (err) {
         if(err.name === 'ValidationError'){
          const message = Object.values(err.errors).map(val => val.message);
-         return res.status(400).json({
+         return res.status(201).json({
              success : false , 
              error : message
          })
         }else{
-            return res.status(500).json({
+            return res.status(201).json({
                 success : false,
                 error : 'server error'
             })
