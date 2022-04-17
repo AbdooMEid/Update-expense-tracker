@@ -1,6 +1,10 @@
 const app = require("express").Router();
 const transactionModel = require("../model/Transactio");
 const auth = require("../auth/auth");
+/*
+/api/v1/getAllTransaction
+method => get
+*/
 
 app.get("/getAllTransaction", auth, async (req, res) => {
   try {
