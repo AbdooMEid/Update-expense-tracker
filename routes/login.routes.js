@@ -4,7 +4,10 @@ const userModel = require("../model/userModel");
 const jwt = require('jsonwebtoken')
 
 
-
+/*
+/api/v1/login
+method => post
+*/
 
 app.post('/login' , async (req,res)=>{
     try {
